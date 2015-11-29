@@ -1,0 +1,43 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Maven + Spring MVC</title>
+
+<spring:url value="/resources/core/css/hello.css" var="coreCss" />
+
+
+<link href="${coreCss}" rel="stylesheet" />
+</head>
+
+
+
+<h2>Television List</h2>
+<div class="whole-list" style="width: 100%;">
+
+
+	<c:forEach var="temp" items="${tv}">
+		<div class="each"
+			style="width: 30%; margin: 2px; border: 1px solid black; float: left;">
+			
+			${temp.MRP}, $
+			
+		</div>
+	</c:forEach>
+
+
+</div>
+
+<hr>
+
+
+<spring:url value="/resources/core/css/hello.js" var="coreJs" />
+
+<script src="${coreJs}"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+
+</body>
+</html>
